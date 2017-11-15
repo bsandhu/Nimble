@@ -1,0 +1,56 @@
+<html>
+<head>
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="../css/nimble.css">
+</head>
+
+<body>
+
+<div class="container-fluid">
+    <div class="row" style="margin-bottom: 2px; margin-top: 5px">
+        <div class="col-md-3 col-sm-3 col-xs-3">
+            <span style="padding: 5px;" id="sidebar-clear" data-toggle="tooltip" data-placement="bottom" title="Clear">
+                <i class="glyphicon glyphicon-ban-circle"></i>
+            </span>
+            <span style="padding-bottom: 5px; padding-top: 5px;" id="sidebar-append" data-toggle="tooltip" data-placement="bottom" title="Append to existing text">
+                <i class="glyphicon glyphicon-plus-sign"></i>
+            </span>
+            <span style="padding: 5px;" id="sidebar-nested" data-toggle="tooltip" data-placement="bottom" title="Include nested elements">
+                <i class="glyphicon glyphicon-log-in"></i>
+            </span>
+        </div>
+        <div class="col-md-9 col-sm-9 col-xs-9">
+            <div class="pull-right">
+                <select id="sidebar-strategySelection" class="form-control input-sm form-horizontal"></select>
+            </div>
+            <div class="pull-right" style="padding-right: 5px; padding-top: 5px">
+                <span>Wrapper gen. strategy</span>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <textarea class="form-control"
+                    style="box-sizing: border-box; height: 30%; width: 100%"
+                      id="sidebar-textArea">
+Select a DOM node in the Elements panel to generate relevant page object elements.
+You can then copy and use the generated code in the Nimble tests.
+            </textarea>
+        </div>
+    </div>
+</div>
+
+
+<script src="../lib/jquery-2.1.4.js"></script>
+<script src="../lib/tooltip.js"></script>
+<script src="../utils/superselector.js"></script>
+
+<!-- Default page object generator -->
+<script src="inputElemPageObjGenerator.js"></script>
+
+<!-- Extension hook for user supplied generators -->
+<script src="../../test/tools/myPageObjectGenerator.js"></script>
+<script src="sidebar.js"></script>
+</body>
+</html>

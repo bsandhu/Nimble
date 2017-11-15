@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head><title>Nimble Options</title></head>
+<body>
+
+Favorite color:
+<select id="color">
+    <option value="red">red</option>
+    <option value="green">green</option>
+    <option value="blue">blue</option>
+    <option value="yellow">yellow</option>
+</select>
+
+<label>
+    <input type="checkbox"
+           id="like">
+    I like colors.
+</label>
+
+<input type="file"
+       multiple
+       webkitdirectory
+       directory
+       onchange="listFiles">
+
+<div id="status"></div>
+<button id="save">Save</button>
+
+<script src="options.js"></script>
+</body>
+</html>

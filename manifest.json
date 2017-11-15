@@ -1,0 +1,55 @@
+{
+    "manifest_version": 2,
+
+    "name": "Nimble",
+    "description": "Functional testing for web UI",
+    "version": "1.0",
+    "minimum_chrome_version": "37",
+    "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'",
+    "devtools_page": "extension/devtools/devtools.html",
+    "options_page": "extension/options.html",
+
+    "permissions": [
+        "<all_urls>",
+        "browsingData",
+        "notifications",
+        "tabs",
+        "activeTab",
+        "debugger",
+        "https://*/*",
+        "http://*/*",
+        "webRequest",
+        "webRequestBlocking"],
+
+    "browser_action": {
+        "default_icon": "icon.png",
+        "default_title": "Run Nimble test suite"
+    },
+
+    "background": {
+        "scripts": [
+            "extension/lib/jquery-2.1.4.js",
+            "test/suites/Master.js",
+            "extension/utils/domInspection.js",
+            "extension/utils/hostPage.js",
+            "extension/utils/inputVerification.js",
+            "extension/utils/waitUntil.js",
+            "extension/utils/widgetWrappers.js",
+            "extension/background.js"],
+        "persistent": true
+    },
+
+    "icons": {
+        "16": "icon.png",
+        "48": "icon.png"
+    },
+
+    "content_scripts": [
+        {
+            "matches": ["file:///*/devtools/Nimble/*"],
+            "js": ["extension/bootup.js"],
+            "run_at": "document_idle"
+        }
+    ]
+
+}
