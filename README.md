@@ -6,8 +6,8 @@ As web apps get more complicated, functional testing is a must have.
 The main problem with UI functional tests is that they need access to a full live DOM, which we do not have in an test environment. 
 The primary mechanism to write such tests at the moment is via the Web Driver standard, which lets us communicate with a browser.
  
-Web Driver approach
- 
+## Web Driver approach
+
 In this approach the WebDriver serves as an intermediary process and provides interaction with the web browser.
  
 The downsides to the approach is that there are a lot of moving parts. This tends to be slow things down, since multiple processes are involved. 
@@ -20,7 +20,8 @@ Some downsides:
 
 Alternates like Phantom JS do not provide the same environment a real user is going to work in. 
 
-A different look at the problem
+## A different look at the problem
+
 One of the problems here, seem to the intermediate layer for talking to the browser. 
 The other is that Web UIs are async. by nature, tests written in languages like Java need to mold and adapt to the paradigm.
 
